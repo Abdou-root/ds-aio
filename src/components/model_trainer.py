@@ -41,15 +41,14 @@ class ModelTrainer:
                 "Decision Tree": DecisionTreeRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
-                "K-Neighbors Classifier": KNeighborsRegressor(),
-                "XGB Classifier": XGBRegressor(),
-                "CatBoosting Classifier": CatBoostRegressor(),
-                "AdaBoost Classifier": AdaBoostRegressor()
+                "XGBRegressor": XGBRegressor(),
+                "CatBoosting Regressor": CatBoostRegressor(),
+                "AdaBoost Regressor": AdaBoostRegressor()
             }
 
             params = {
                 "Decision Tree": {
-                    'criterion': ['sqaured_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
                     # 'splitter': ['best', 'random'],
                     # 'max_features':['sqrt', 'log2']
                 },
