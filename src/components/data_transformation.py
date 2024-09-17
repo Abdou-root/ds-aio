@@ -1,5 +1,4 @@
 import sys
-import os
 from dataclasses import dataclass
 
 import numpy as np
@@ -18,7 +17,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path = os.path.join('artifacts', "preprocessor.pkl")
+    preprocessor_obj_file_path = os.path.join('artifacts', "proprocessor.pkl")
 
 
 class DataTransformation:

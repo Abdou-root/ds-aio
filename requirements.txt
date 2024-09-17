@@ -2,8 +2,9 @@ pandas
 numpy
 seaborn
 matplotlib
+scikit-learn
 catboost
 xgboost
-scikit-learn
 Flask
--e .
+
+#-e .
