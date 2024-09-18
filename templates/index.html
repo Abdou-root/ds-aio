@@ -1,1 +1,127 @@
-<h1>Welcome to Home</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Student Performance Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css">
+</head>
+<body>
+<!--=============== HEADER ===============-->
+<header class="header" id="header">
+    <!--nav bar-->
+    <nav class="nav container padd-15">
+        <!--nav logo-->
+        <a href="#" class="nav-logo">
+            <h2>DS AIO</h2>
+        </a>
+        <!--nav menu-->
+        <div class="nav-menu" id="nav-menu">
+            <!--nav list-->
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Project</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<div class="container">
+    <header>
+        <h1>Welcome to the Data Science Showcase</h1>
+        <p>Machine learning, Natural Language Processing, Deep Learning!</p>
+    </header>
+
+    <main>
+        <section class="project">
+            <h2>Project 1: Student Performance Indicator</h2>
+
+            <div class="project-item">
+                <img src="{{ url_for('static', filename='img/app1.png') }}">
+
+                <p>This tool helps you predict students' math scores based on various factors like gender, ethnicity,
+                    parental education level, and more. Linear Regression</p>
+
+                <a class="cta-btn" href="/predictdata">Tryout</a>
+            </div>
+            <h2>Project 2: Text Summarizer</h2>
+
+            <div class="project-item">
+                <img src="{{ url_for('static', filename='img/app2.png') }}">
+
+                <p>This tool helps you summarize text. NLP</p>
+                <a class="cta-btn" href="/predictdata">Tryout</a>
+            </div>
+            <h2>Project 3: Yolo v8 cell segmentation</h2>
+
+            <div class="project-item">
+
+                <img src="{{ url_for('static', filename='img/app3.png') }}">
+
+                <p>This tool helps you predict students' math scores based on various factors like gender, ethnicity,
+                    parental education level, and more. Linear Regression</p>
+                <a class="cta-btn" href="/predictdata">Tryout</a>
+            </div>
+
+        </section>
+        <section class="about" id="about">
+            <div class="container">
+                <h2>About Project</h2>
+                <p>Welcome to my Machine Learning Project Showcase! This platform highlights tools and applications I've
+                    developed as part of my journey into the world of machine learning and data science. Each project
+                    reflects my growing expertise in various machine learning domains, including predictive modeling,
+                    natural language processing, and computer vision.
+
+                    This showcase aims to demonstrate how data-driven solutions can address real-world problems through
+                    practical implementations of algorithms and models. Explore the projects to see how machine learning
+                    can
+                    transform raw data into actionable insights and solutions.</p>
+            </div>
+
+        </section>
+    </main>
+    <!--=============== Contact ===============-->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <!--section title-->
+            <h2 class="section-title padd-15">Contact Me</h2>
+            <div class="row">
+                <div class="contact-box padd-15">
+                    <!--contact box-->
+                    <div class="contact-data">
+                        <!--contact information-->
+                        <div class="contact-information">
+                            <h3 class="contact-subtitle">Have a chat!</h3>
+                            <span class="contact-description">
+                                    <i class="lni lni-phone contact-icon"></i>
+                                    +86 199 1550 4212
+                                </span>
+                        </div>
+                        <!--contact information-->
+                        <div class="contact-information">
+                            <h3 class="contact-subtitle">Shoot an Email</h3>
+                            <span class="contact-description">
+                                    <i class="lni lni-envelope contact-icon"></i>
+                                    grineabdessamed2003@gmail.com
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Abdessamad Grine</p>
+    </footer>
+</div>
+</body>
+</html>
