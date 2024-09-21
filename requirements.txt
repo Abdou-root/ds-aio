@@ -7,5 +7,7 @@ catboost
 dill
 xgboost
 Flask
+nltk
+wordcloud
 
 #-e .

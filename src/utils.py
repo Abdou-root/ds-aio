@@ -1,11 +1,11 @@
 import os
 import sys
-
+import logging
 import numpy as np
 import pandas as pd
 import dill
 import pickle
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score, accuracy_score, f1_score, precision_score, recall_score
 from sklearn.model_selection import GridSearchCV
 
 from src.exception import CustomException
@@ -49,6 +49,41 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
             test_model_score = r2_score(y_test, y_test_pred)
 
             report[list(models.keys())[i]] = test_model_score
+
+        return report
+
+    except Exception as e:
+        raise CustomException(e, sys)
+
+
+def evaluate_models2(X_train, y_train, X_test, y_test, models, param):
+    try:
+        report = {}
+
+        for model_name, model in models.items():
+            logging.info(f"Evaluating model: {model_name}")
+            para = param[model_name]
+
+            # Perform Grid Search
+            gs = GridSearchCV(model, para, cv=3)
+            gs.fit(X_train, y_train)
+            model.set_params(**gs.best_params_)
+            model.fit(X_train, y_train)
+
+            # Predicting on train and test sets
+            y_train_pred = model.predict(X_train)
+            y_test_pred = model.predict(X_test)
+
+            # Calculate accuracy
+            train_accuracy = accuracy_score(y_train, y_train_pred)
+            test_accuracy = accuracy_score(y_test, y_test_pred)
+
+            # Store results in the report
+            report[model_name] = {
+                "accuracy": test_accuracy,
+                "train_accuracy": train_accuracy,
+                # Add any other metrics you want to track
+            }
 
         return report
 
